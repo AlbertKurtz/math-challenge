@@ -1,3 +1,6 @@
+# Try it:
+In the folder [some_builds](./some_builds) you can find the executables for the latest version of Math Challenge for Windows, Linux and Mac.
+
 ![mathchallenge](./logo_title/mathchallenge.png)
 
 
