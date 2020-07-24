@@ -12,38 +12,38 @@ All quizes are procedurally generated, based on an algorithm contained in `quiz_
 ```GDScript
   	func ultimate_generate_quiz(lvl):
   
-	var two_numbers = operation_difficulty(lvl)
-	
-	var string_to_print = ""
-	operation = operations[randi()%4]
-	randomize()
-	if randf()<0.5:
-		num1 = two_numbers[0]
-		num2 = two_numbers[1]	
-	else:
-		num1 = two_numbers[1]
-		num2 = two_numbers[0]	
-		
-	if operation == "+":
-		result = num1 + num2
-		string_to_print =str(num1) +" "+ operation +" "+ str(num2)
-	if operation == "-":
-		result = num1 + num2
-		string_to_print =str(result) +" "+ operation +" "+ str(num1)
-		result = num2
-	if operation == "*":
+		var two_numbers = operation_difficulty(lvl)
 
-		result = num1 * num2
-		string_to_print =str(num1) +" "+ operation +" "+ str(num2)
-	if operation == "/":
-		if num1 == 0:
-			num1+= randi() % (10)+1
-		result = num1 * num2
-		string_to_print =str(result) +" "+ operation +" "+str(num1)
-		result = num2
-	
+		var string_to_print = ""
+		operation = operations[randi()%4]
+		randomize()
+		if randf()<0.5:
+			num1 = two_numbers[0]
+			num2 = two_numbers[1]	
+		else:
+			num1 = two_numbers[1]
+			num2 = two_numbers[0]	
 
-	return [result, string_to_print]
+		if operation == "+":
+			result = num1 + num2
+			string_to_print =str(num1) +" "+ operation +" "+ str(num2)
+		if operation == "-":
+			result = num1 + num2
+			string_to_print =str(result) +" "+ operation +" "+ str(num1)
+			result = num2
+		if operation == "*":
+
+			result = num1 * num2
+			string_to_print =str(num1) +" "+ operation +" "+ str(num2)
+		if operation == "/":
+			if num1 == 0:
+				num1+= randi() % (10)+1
+			result = num1 * num2
+			string_to_print =str(result) +" "+ operation +" "+str(num1)
+			result = num2
+
+
+		return [result, string_to_print]
   ```
  
  Game requires some fixes and visual enhancement, but right now it is in a good state and playable.
