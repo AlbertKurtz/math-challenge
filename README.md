@@ -9,7 +9,8 @@ Each time the player gains additional time, the difficulty of the questions incr
 All quizes are procedurally generated, based on an algorithm contained in `quiz_generator.gd`. The function used in the current state is
 `ultimate_generate_quiz()`
 
-  func ultimate_generate_quiz(lvl):
+```GDScript
+  	func ultimate_generate_quiz(lvl):
   
 	var two_numbers = operation_difficulty(lvl)
 	
@@ -43,6 +44,6 @@ All quizes are procedurally generated, based on an algorithm contained in `quiz_
 	
 
 	return [result, string_to_print]
-  
+  ```
  
  Game requires some fixes and visual enhancement, but right now it is in a good state and playable.
