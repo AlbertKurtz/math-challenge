@@ -1,4 +1,4 @@
-# ![mathchallenge](https://user-images.githubusercontent.com/6939464/88379269-e777b700-cda2-11ea-8e68-28a647c52efe.png)
+![mathchallenge](./logo_title/mathchallenge.png)
 
 
 Math Challenge is one of the firs games/prototypes I made. 
