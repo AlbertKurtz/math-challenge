@@ -1,8 +1,9 @@
 ![mathchallenge](./logo_title/mathchallenge.png)
 
 
-Math Challenge is one of the firs games/prototypes I made. 
-It is a game about doing fast calculation with the basic operations +, -, *, /
+Math Challenge is one of the first games/prototypes I made with the Godot Game Engine (https://godotengine.org/ ).
+
+It is a game about doing fast calculations with the basic operations +, -, *, /
 
 There is a countdown clock that refreshes every 10 answers, with a progressively lower amount of time added to the clock.
 Each time the player gains additional time, the difficulty of the questions increases.
