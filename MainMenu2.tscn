@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://MainMenu2.gd" type="Script" id=1]
+[ext_resource path="res://background_image/AF_2019.png" type="Texture" id=2]
+[ext_resource path="res://logo_title/mathchallenge.png" type="Texture" id=3]
+[ext_resource path="res://background_image/generic_white_rectangle.png" type="Texture" id=4]
+[ext_resource path="res://new_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/background.tscn" type="PackedScene" id=6]
+
+[node name="MainMenu2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="AF_2018" type="Sprite" parent="."]
+position = Vector2( 286, 700 )
+scale = Vector2( 0.416796, 0.269173 )
+texture = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 90.0
+margin_right = 576.0
+margin_bottom = 330.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -183.0
+margin_top = -162.0
+margin_right = 184.0
+margin_bottom = 384.0
+rect_pivot_offset = Vector2( 404.717, 327.436 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_right = 367.0
+margin_bottom = 56.0
+text = "Practice"
+
+[node name="Time Challenge" type="Button" parent="VBoxContainer"]
+modulate = Color( 0.980392, 0.423529, 0.0313726, 1 )
+margin_top = 64.0
+margin_right = 367.0
+margin_bottom = 120.0
+text = "Time Challenge"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+margin_top = 128.0
+margin_right = 367.0
+margin_bottom = 184.0
+text = "Exit"
+
+[node name="level_choice_window" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.207843, 0.654902, 0.752941, 1 )
+margin_left = 60.0
+margin_top = 320.0
+margin_right = 530.0
+margin_bottom = 670.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="level_choice_window"]
+margin_left = 45.0
+margin_top = 30.0
+margin_right = 412.0
+margin_bottom = 124.0
+alignment = 1
+
+[node name="Label" type="Label" parent="level_choice_window/HBoxContainer"]
+modulate = Color( 0.741176, 0.156863, 0.156863, 1 )
+margin_right = 67.0
+margin_bottom = 94.0
+custom_fonts/font = ExtResource( 5 )
+text = "lEVEL
+"
+align = 1
+valign = 1
+
+[node name="level_choice" type="SpinBox" parent="level_choice_window/HBoxContainer"]
+margin_left = 75.0
+margin_right = 367.0
+margin_bottom = 94.0
+value = 1.0
+align = 1
+
+[node name="start_practice" type="Button" parent="level_choice_window"]
+modulate = Color( 0.0470588, 0.913725, 0.0862745, 1 )
+margin_left = 120.0
+margin_top = 200.0
+margin_right = 354.0
+margin_bottom = 256.0
+text = "START PRACTICE"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 6 )]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Time Challenge" to="." method="_on_Time_Challenge_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="changed" from="level_choice_window/HBoxContainer/level_choice" to="." method="_on_level_choice_changed"]
+[connection signal="pressed" from="level_choice_window/start_practice" to="." method="_on_Button_pressed"]
