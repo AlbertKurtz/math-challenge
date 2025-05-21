@@ -25,6 +25,7 @@ onready var heart_index = 0
 onready var hour_glass = get_node("hour_glass")
 
 func _ready():
+	randomize() # Initialize random number generator seed
 	var difficulty_pair = quiz_generator.split_level(global.level)
 	operation_difficulty = difficulty_pair[0]
 	time_difficulty = difficulty_pair[1]

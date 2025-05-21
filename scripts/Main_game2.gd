@@ -14,14 +14,20 @@ var counter
 
 
 func generate_quiz(lvl):
-	if lvl>4:
+	# lvl is global.level, which currently cycles 1, 2, 3, then 4->1
+	if lvl > 4: # This line is from the original code, retained.
 		lvl = 1
-	match lvl:
-		1: lista = quiz_generator.generate_quiz_level1()
-		2: lista = quiz_generator.generate_quiz_level2()
-		3: lista = quiz_generator.generate_quiz_level3()
-		4: lista = quiz_generator.generate_quiz_level1()
+
+	var difficulty_value = 1 # Default difficulty_value
+	if lvl == 1:
+		difficulty_value = 1  # Corresponds to smallest numbers in ultimate_generate_quiz
+	elif lvl == 2:
+		difficulty_value = 10 # Corresponds to medium numbers in ultimate_generate_quiz
+	elif lvl == 3:
+		difficulty_value = 20 # Corresponds to larger numbers in ultimate_generate_quiz
+	# If lvl was 4, it's now 1 due to the check above, so difficulty_value will be 1.
 	
+	lista = quiz_generator.ultimate_generate_quiz(difficulty_value)
 	result = lista[0]
 	print_string = lista[1]
 	question_label.set_text(print_string)
@@ -42,6 +48,7 @@ func answer_given():
 # var b = "textvar"
 
 func _ready():
+	randomize() # Initialize random number generator seed
 
 	counter = 0
 	if not OS.has_touchscreen_ui_hint():
